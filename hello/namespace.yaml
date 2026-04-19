@@ -2,5 +2,7 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: hello
+  labels:
+    gateway.k8s.local/listener-attach: "true"
   annotations:
     linkerd.io/inject: enabled

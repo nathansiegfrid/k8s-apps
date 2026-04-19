@@ -5,8 +5,9 @@ metadata:
   namespace: hello
 spec:
   parentRefs:
-    - name: main-gateway
-      namespace: gateway
+    - group: gateway.networking.x-k8s.io
+      kind: XListenerSet
+      name: hello
       sectionName: https
   hostnames:
     - hello.siegfrid.com

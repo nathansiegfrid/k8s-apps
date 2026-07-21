@@ -3,8 +3,8 @@ kind: Kustomization
 resources:
   - deployment-v1.yaml
   - deployment-v2.yaml
-  - httproute.yaml
-  - listenerset.yaml
-  - namespace.yaml
+  # - httproute.yaml
+  # - listenerset.yaml
+  # - namespace.yaml
   - service-v1.yaml
   - service-v2.yaml

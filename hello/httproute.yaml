@@ -2,24 +2,14 @@ apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
   name: hello
-  namespace: hello
 spec:
   parentRefs:
-    - group: gateway.networking.x-k8s.io
-      kind: XListenerSet
-      name: hello
-      sectionName: https
+    - name: public
+      namespace: gateway
+      sectionName: http
   hostnames:
     - hello.siegfrid.com
   rules:
-    - matches:
-        - path:
-            type: PathPrefix
-            value: /
-      backendRefs:
-        - name: hello-v1
+    - backendRefs:
+        - name: hello
           port: 80
-          weight: 70
-        - name: hello-v2
-          port: 80
-          weight: 30

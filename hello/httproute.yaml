@@ -6,7 +6,7 @@ spec:
   parentRefs:
     - name: public
       namespace: gateway
-      sectionName: http
+      sectionName: https
   hostnames:
     - hello.siegfrid.com
   rules:

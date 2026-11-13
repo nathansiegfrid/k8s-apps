@@ -1,0 +1,28 @@
+# Pod Security restricted must reject this pod: it runs as root, with no
+# seccomp profile, and keeps its capabilities. If it ever runs, enforcement
+# is off; pause does nothing and isn't privileged, so it stays harmless.
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: forbidden
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: forbidden
+  template:
+    metadata:
+      labels:
+        app: forbidden
+    spec:
+      securityContext:
+        runAsUser: 0
+      containers:
+        - name: pause
+          image: registry.k8s.io/pause:3.10.2
+          resources:
+            requests:
+              cpu: 1m
+              memory: 8Mi
+            limits:
+              memory: 16Mi

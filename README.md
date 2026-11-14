@@ -7,7 +7,7 @@ The apps of `tenant-01` on the homelab cluster. [k8s-fleet](https://github.com/n
 - Pods pass Pod Security `restricted`: a non-root user, no privilege escalation, every capability dropped, and the `RuntimeDefault` seccomp profile.
 - Pods run on the workers only: they can't set `nodeName` or tolerate the control-plane taint.
 - Services are `ClusterIP` only: no `NodePort`, `LoadBalancer` or external IPs.
-- Traffic from outside comes through the shared Gateway, `public` in the `gateway` namespace. An HTTPRoute attaches to its `https` listener, which serves any `*.siegfrid.com` hostname with the platform's certificate; plain HTTP redirects to HTTPS.
+- Traffic from outside comes through the shared Gateway, `public-gateway` in the `gateway` namespace. An HTTPRoute attaches to its `https` listener, which serves any `*.siegfrid.com` hostname with the platform's certificate; plain HTTP redirects to HTTPS.
 - The namespace is in Istio's ambient mesh, so traffic between pods uses mTLS.
 
 ## Apps

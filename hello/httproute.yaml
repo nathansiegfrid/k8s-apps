@@ -7,6 +7,9 @@ spec:
     - name: public
       namespace: gateway
       sectionName: https
+    - name: public-gateway
+      namespace: gateway
+      sectionName: https
   hostnames:
     - hello.siegfrid.com
   rules:

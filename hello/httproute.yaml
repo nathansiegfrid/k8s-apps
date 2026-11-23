@@ -2,6 +2,10 @@ apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
   name: hello
+  annotations:
+    # Through Cloudflare's proxy, which retries the other worker once when one
+    # doesn't answer.
+    external-dns.kubernetes.io/cloudflare-proxied: "true"
 spec:
   parentRefs:
     - name: public-gateway

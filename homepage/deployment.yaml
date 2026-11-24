@@ -27,7 +27,10 @@ spec:
       containers:
         - name: homepage
           # Built by homepage/build.sh in the vault.
-          image: docker.io/siegfrid/homepage:0.1.0
+          image: docker.io/siegfrid/homepage:0.1.1
+          # Pull on every start, so a restart picks up a rebuild pushed under the
+          # same tag.
+          imagePullPolicy: Always
           ports:
             - name: http
               containerPort: 8080

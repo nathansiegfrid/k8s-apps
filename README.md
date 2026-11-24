@@ -16,3 +16,4 @@ The apps of `tenant-01` on the homelab cluster. [k8s-fleet](https://github.com/n
 | --- | --- |
 | `forbidden` | Nothing: a pod that Pod Security must reject, as root with no seccomp profile and its capabilities kept. Each rejection shows in its ReplicaSet's events; a running pod means enforcement is off |
 | `hello` | nginx's hello page in plain text, with the serving pod's name and address, at `hello.siegfrid.com`. Two replicas |
+| `homepage` | The personal homepage at `www.siegfrid.com`, through Cloudflare's proxy. Two replicas |

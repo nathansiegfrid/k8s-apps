@@ -10,7 +10,7 @@ spec:
   parentRefs:
     - name: public-gateway
       namespace: gateway
-      sectionName: https
+      sectionName: siegfrid-com
   hostnames:
     - hello.siegfrid.com
   rules:

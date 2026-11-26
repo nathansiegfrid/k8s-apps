@@ -10,7 +10,7 @@ spec:
   parentRefs:
     - name: public-gateway
       namespace: gateway
-      sectionName: https
+      sectionName: siegfrid-com
   # Only www: the bare siegfrid.com is outside the listener's *.siegfrid.com,
   # and a Cloudflare redirect rule sends it here.
   hostnames:

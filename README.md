@@ -4,7 +4,7 @@ The apps of `tenant-01` on the homelab cluster. [k8s-fleet](https://github.com/n
 
 ## Getting traffic in
 
-Traffic from outside comes through the shared Gateways in the `gateway` namespace. An HTTPRoute attaches to `public-gateway`'s `https` listener, which serves any `*.siegfrid.com` hostname with the platform's certificate and redirects plain HTTP to HTTPS. To keep a site private, attach its route to `private-gateway`'s `siegfrid-org` listener instead, and only VPN clients can reach it. external-dns publishes the hostname automatically for both Gateways.
+Traffic from outside comes through the shared Gateways in the `gateway` namespace. An HTTPRoute attaches to `public-gateway`'s `siegfrid-com` listener, which serves any `*.siegfrid.com` hostname with the platform's certificate and redirects plain HTTP to HTTPS. To keep a site private, attach its route to `private-gateway`'s `siegfrid-org` listener instead, and only VPN clients can reach it. external-dns publishes the hostname automatically for both Gateways.
 
 ## What the cluster won't allow
 

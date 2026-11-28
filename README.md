@@ -14,7 +14,7 @@ Because every tenant's pods run on the same nodes, the cluster enforces a few ru
 - **Pods run on the workers only:** they can't set `nodeName` or tolerate the control-plane taint.
 - **Services are `ClusterIP` only:** no `NodePort`, `LoadBalancer` or external IPs.
 - **Resources come from a quota.** `kubectl describe resourcequota` shows this namespace's share. A container without resources gets a request of 10m CPU and 64Mi memory and a memory limit of 256Mi.
-- **The network starts closed.** Pods accept connections from this namespace and the Gateways only, and connect out to this namespace and DNS only. A NetworkPolicy here opens more. Cloud metadata and the VPN's clients stay closed whatever it allows.
+- **Network is locked down by default.** Pods accept connections from this namespace and the Gateways only, and connect out to this namespace and DNS only. Create a NetworkPolicy or CiliumNetworkPolicy to open up access.
 
 The namespace is in Istio's ambient mesh, so traffic between pods uses mTLS without any change to the apps.
 

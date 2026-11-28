@@ -1,0 +1,16 @@
+# One PostgreSQL instance, run by the platform's CloudNativePG operator. Apps
+# connect to `postgres-rw:5432` with the credentials in `postgres-app`.
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: postgres
+spec:
+  instances: 1
+  storage:
+    size: 5Gi
+  resources:
+    requests:
+      cpu: 100m
+      memory: 256Mi
+    limits:
+      memory: 512Mi

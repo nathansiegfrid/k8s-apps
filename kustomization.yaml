@@ -4,3 +4,4 @@ resources:
   - forbidden
   - hello
   - homepage
+  - postgres
